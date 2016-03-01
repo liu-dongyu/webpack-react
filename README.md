@@ -1,4 +1,4 @@
-reactjs项目框架初尝
+reactjs project
 =====================
 
 ## 安装依赖

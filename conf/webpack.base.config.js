@@ -31,7 +31,9 @@ module.exports = new WebpackConfig().merge({
 		modulesDirectories: ['node_modules', 'styles', 'static'],
 		alias: {
 			//指定常用库的位置，优化webpack
-			'react': path.join(nodemodulesPath, 'react')
+			'react': path.join(nodemodulesPath, 'react'),
+			'react-dom': path.join(nodemodulesPath, 'react-dom'),
+			'react-router': path.join(nodemodulesPath, 'react-router')
 		}
 	},
 	plugins: [

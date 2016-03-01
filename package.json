@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dist": "NODE_ENV=prod webpack",
+    "dist": "NODE_ENV=prod webpack --progress --colors",
     "start": "NODE_ENV=dev webpack-dev-server --watch-poll --inline --hot"
   },
   "keywords": [],

@@ -18,12 +18,6 @@ module.exports = new WebpackConfig().extend('./conf/webpack.base.config.js').mer
 		host: '0.0.0.0',
 		port: 3000
 	},
-	resolve: {
-		alias: {
-			'react-dom': path.join(nodemodulesPath, 'react-dom/dist/react-dom.js'),
-			'react-router': path.join(nodemodulesPath, 'react-router/umd/ReactRouter.js')
-		}
-	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
 	]
