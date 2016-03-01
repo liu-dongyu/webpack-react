@@ -4,13 +4,14 @@ reactjs project
 ## 安装依赖
 
     npm install
-    npm start or npm run dist
+    npm start or npm build
     
 ## 框架 / 类库
 
 + [react](https://github.com/facebook/react)
-+ [react-router](https://github.com/reactjs/react-router)
 + [redux](https://github.com/reactjs/redux)
++ [react-redux](https://github.com/reactjs/react-redux)
++ [react-router](https://github.com/reactjs/react-router)
 + [react-router-redux](https://github.com/reactjs/react-router-redux)
 + [immutable](https://facebook.github.io/immutable-js/)
 + [normalizr](https://github.com/gaearon/normalizr)

@@ -4,9 +4,16 @@
 
 const path = require('path'),
 	webpack = require('webpack'),
-	WebpackConfig = require('webpack-config'),
-	nodemodulesPath = path.join(path.resolve(__dirname, '..'), 'node_modules');
+	WebpackConfig = require('webpack-config');
 
 module.exports = new WebpackConfig().extend('./conf/webpack.base.config.js').merge({
-
+	plugins: [
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: false,
+			mangle: false,
+			compress: {
+				warnings: false
+			}
+		})
+	]
 });
