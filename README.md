@@ -1,4 +1,4 @@
-reactjs 初始框架
+reactjs项目框架初尝
 =====================
 
 ## 安装依赖
@@ -24,7 +24,7 @@ reactjs 初始框架
 + [style-loader](https://github.com/webpack/style-loader)（js require css）
 + [css-loader](https://github.com/webpack/css-loader)（js require css）
 + [sass-loader](https://github.com/jtangelder/sass-loader)（解析scss）
-+ [postcss-loader](https://github.com/postcss/postcss-loader)（用于自动补全浏览器前缀）
++ [postcss-loader](https://github.com/postcss/postcss-loader)（用于css自动补全浏览器前缀）
 + [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin)（用于打包时分离js和css）
 
 ## 目录结构
