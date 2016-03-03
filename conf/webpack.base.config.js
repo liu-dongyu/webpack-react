@@ -17,7 +17,7 @@ const WebpackConfig = require('webpack-config'),
 
 module.exports = new WebpackConfig().merge({
 	entry: {
-		app: path.join(src, 'routes.jsx'),
+		app: path.join(src, 'routes.js'),
 		//打包时分离第三方库
 		vendors: ['react', 'react-dom', 'react-router', 'react-router-redux', 'redux', 'react-redux']
 	},
