@@ -1,12 +1,17 @@
 reactjs project
 =====================
 
-## 安装依赖
+## 开始
 
-    npm install
-    npm start or npm run build
-    http://localhost:3000
+    //安装依赖
+    npm install 
     
+    //开发环境，演示地址：http://localhost:3000
+    npm start 
+    
+    //生产环境，dist目录
+    npm run build 
+
 ## 框架 / 类库
 
 + [react](https://github.com/facebook/react)
