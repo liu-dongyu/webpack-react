@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+		"eslint": "eslint javascript/*",
     "clean:dist": "rm -rf dist/js & rm -rf dist/styles & rm -rf dist/index.html & rm -rf dist/fonts",
     "build": "npm run clean:dist && NODE_ENV=prod webpack --progress --colors",
     "start": "NODE_ENV=dev webpack-dev-server --watch-poll --inline --hot"
@@ -18,6 +19,9 @@
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.23.1",
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",

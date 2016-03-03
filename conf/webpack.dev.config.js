@@ -18,5 +18,6 @@ module.exports = new WebpackConfig().extend('./conf/webpack.base.config.js').mer
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
-	]
+	],
+	devtool: 'eval-source-map'
 });

@@ -11,6 +11,9 @@ reactjs project
     
     //生产环境，dist目录
     npm run build 
+    
+    //js代码规格检测
+    npm run eslint
 
 ## 框架 / 类库
 
