@@ -53,7 +53,7 @@ module.exports = new WebpackConfig().merge({
 			},
 			{
 				test: /(\.css|\.scss)$/,
-				exclude: nodemodulesPath,
+				include: styles,
 				loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]-[hash:base64:5]!sass!postcss')
 			},
 			{ //正常解析node_modules文件内的css库，不用CSS Modules
