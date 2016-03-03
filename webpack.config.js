@@ -1,12 +1,12 @@
 'use strict';
 
-const path = require('path');
-const WebpackConfig = require('webpack-config');
+const path = require('path'),
+	WebpackConfig = require('webpack-config');
 
 WebpackConfig.environment.setAll({
-  env: function() {
-    return process.env.WEBPACK_ENV || process.env.NODE_ENV;
-  },
+	env: function() {
+		return process.env.WEBPACK_ENV || process.env.NODE_ENV;
+	},
 	paths: {
 		src: path.join(__dirname, 'javascript'),
 		dist: path.join(__dirname, 'dist'),
