@@ -18,15 +18,15 @@ const WebpackConfig = require('webpack-config'),
 module.exports = new WebpackConfig().merge({
 	entry: {
 		app: path.join(src, 'routes.jsx'),
-		//打包时分离 vendors 内指定的库
-		vendors: ['react', 'react-dom', 'react-router']
+		//打包时分离第三方库
+		vendors: ['react', 'react-dom', 'react-router', 'react-router-redux', 'redux', 'react-redux']
 	},
 	output: {
 		path: dist,
-		filename: 'js/bundle_[hash].js'
+		filename: 'js/bundle.[hash].js'
 	},
 	resolve: {
-		extensions: ['', '.js', '.jsx', 'scss'],
+		extensions: ['', '.js', '.jsx', '.scss', '.css'],
 		//快捷路径，可以直接 import 该目录下的文件
 		modulesDirectories: ['node_modules', 'styles', 'static'],
 		alias: {
@@ -40,9 +40,9 @@ module.exports = new WebpackConfig().merge({
 		//以 template 为基础在 dist 下自动生成index.html
 		new HtmlWebpackPlugin({template: path.join(views, 'index.html')}),
 		//第三方库存放的地方
-		new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors_[hash].js'),
+		new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.[hash].js'),
 		//css打包生成的目录
-		new ExtractTextPlugin('styles/styles_[hash].css')
+		new ExtractTextPlugin('styles/styles.[hash].css')
 	],
 	module: {
 		loaders: [
@@ -53,7 +53,17 @@ module.exports = new WebpackConfig().merge({
 			},
 			{
 				test: /(\.css|\.scss)$/,
+				exclude: nodemodulesPath,
 				loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]-[hash:base64:5]!sass!postcss')
+			},
+			{ //正常解析node_modules文件内的css库，不用CSS Modules
+				test: /\.css?$/,
+				include: nodemodulesPath,
+				loader: ExtractTextPlugin.extract('style', 'css')
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+				loader: 'url-loader?importLoaders=1&limit=1000&name=/fonts/[name].[ext]'
 			}
 		]
 	},

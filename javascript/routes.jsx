@@ -6,13 +6,11 @@ import { createStore, applyMiddleware } from 'redux'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
-import 'normalize.css'
+import reducers from './reducers'
 
-import reducers from './reducers.js'
-
-import App from './App.jsx'
-import Home from './home/Home.jsx'
-import About from './about/About.jsx'
+import App from './App'
+import Home from './home/Home'
+import About from './about/About'
 
 const store = createStore(reducers);
 
