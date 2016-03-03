@@ -3,9 +3,7 @@
 'use strict';
 
 const webpack = require('webpack'),
-	WebpackConfig = require('webpack-config'),
-	path = require('path'),
-	nodemodulesPath = path.join(path.resolve(__dirname, '..'), 'node_modules');
+	WebpackConfig = require('webpack-config');
 
 module.exports = new WebpackConfig().extend('./conf/webpack.base.config.js').merge({
 	devServer: {

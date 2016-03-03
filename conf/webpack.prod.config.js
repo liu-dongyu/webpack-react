@@ -2,8 +2,7 @@
 
 'use strict';
 
-const path = require('path'),
-	webpack = require('webpack'),
+const webpack = require('webpack'),
 	WebpackConfig = require('webpack-config');
 
 module.exports = new WebpackConfig().extend('./conf/webpack.base.config.js').merge({

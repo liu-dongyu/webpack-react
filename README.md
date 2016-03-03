@@ -5,6 +5,7 @@ reactjs project
 
     npm install
     npm start or npm run build
+    http://localhost:3000
     
 ## 框架 / 类库
 
