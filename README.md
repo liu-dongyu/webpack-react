@@ -4,7 +4,7 @@ reactjs project
 ## 安装依赖
 
     npm install
-    npm start or npm build
+    npm start or npm run build
     
 ## 框架 / 类库
 

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=prod webpack --progress --colors",
+		"clean:dist": "rm -rf dist/js & rm -rf dist/styles & rm -rf dist/index.html",
+		"build": "npm run clean:dist && NODE_ENV=prod webpack --progress --colors",
     "start": "NODE_ENV=dev webpack-dev-server --watch-poll --inline --hot"
   },
   "keywords": [],
