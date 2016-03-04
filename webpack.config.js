@@ -8,9 +8,9 @@ WebpackConfig.environment.setAll({
 		return process.env.WEBPACK_ENV || process.env.NODE_ENV;
 	},
 	paths: {
-		src: path.join(__dirname, 'javascript'),
+		src: path.join(__dirname, 'src'),
 		dist: path.join(__dirname, 'dist'),
-		views: path.join(__dirname, 'views'),
+		template: path.join(__dirname, 'template'),
 		styles: path.join(__dirname, 'styles')
 	}
 });

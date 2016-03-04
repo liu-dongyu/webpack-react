@@ -8,7 +8,7 @@ const WebpackConfig = require('webpack-config'),
 	path = require('path'),
 	src = WebpackConfig.environment.get('paths').src,
 	dist = WebpackConfig.environment.get('paths').dist,
-	views = WebpackConfig.environment.get('paths').views,
+	template = WebpackConfig.environment.get('paths').template,
 	styles = WebpackConfig.environment.get('paths').styles,
 	nodemodulesPath = path.join(path.resolve(__dirname, '..'), 'node_modules'),
 	autoprefixer = require('autoprefixer'),
@@ -30,15 +30,18 @@ module.exports = new WebpackConfig().merge({
 		//快捷路径，可以直接 import 该目录下的文件
 		modulesDirectories: ['node_modules', 'styles', 'static'],
 		alias: {
-			//指定常用库的位置，优化webpack
+			//指定公共库的位置，优化webpack搜索硬盘的速度
 			'react': path.join(nodemodulesPath, 'react'),
 			'react-dom': path.join(nodemodulesPath, 'react-dom'),
-			'react-router': path.join(nodemodulesPath, 'react-router')
+			'react-router': path.join(nodemodulesPath, 'react-router'),
+			'redux': path.join(nodemodulesPath, 'redux'),
+			'react-redux': path.join(nodemodulesPath, 'react-redux'),
+			'react-router-redux': path.join(nodemodulesPath, 'react-router-redux')
 		}
 	},
 	plugins: [
 		//以 template 为基础在 dist 下自动生成index.html
-		new HtmlWebpackPlugin({template: path.join(views, 'index.html')}),
+		new HtmlWebpackPlugin({template: path.join(template, 'index.html')}),
 		//第三方库存放的地方
 		new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.[hash].js'),
 		//css打包生成的目录
@@ -47,7 +50,7 @@ module.exports = new WebpackConfig().merge({
 	module: {
 		loaders: [
 			{
-				test: /\.jsx?$/,
+				test: /(\.js|\.jsx)$/,
 				loaders: ['babel?cacheDirectory'],
 				include: src
 			},
