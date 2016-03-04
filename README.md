@@ -50,12 +50,6 @@ reactjs project
 2. webpack.dev.config.js，开发环境配置
 3. webpack.prod.config.js，生产环境配置
 
-## 补充说明
-
-1. 开发环境下开启热加载模式，自动变更页面
-2. 可以直接 ` import ` node_modules / styles / static 内的文件
-3. 第三方库和源码分开打包
-4. 使用 [css-modules](https://github.com/css-modules/css-modules)
 
 ## 注意
 
