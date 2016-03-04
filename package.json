@@ -1,16 +1,15 @@
 {
   "name": "react-begin",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+	"description": "a react begin project",
   "scripts": {
 		"eslint": "eslint src/*",
     "clean:dist": "rm -rf dist/js & rm -rf dist/styles & rm -rf dist/index.html & rm -rf dist/fonts",
     "build": "npm run clean:dist && NODE_ENV=prod webpack --progress --colors",
     "start": "NODE_ENV=dev webpack-dev-server --watch-poll --inline --hot"
   },
-  "keywords": [],
-  "author": "",
+	"keywords": ["react"],
+  "author": "https://github.com/liu-dongyu",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
