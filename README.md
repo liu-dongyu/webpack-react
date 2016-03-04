@@ -43,8 +43,6 @@ reactjs project
 
 <img src="./static/dir-structure.png">
 
-1. 按功能逻辑划分，根据功能逻辑在 `javascript` 内创建相应的目录名 ，在该目录内创建相应的 `component / reducer / action` 等
-2. 样式文件和1做法一致（以 `styles` 为父目录）
 
 ## 配置文件说明
 
