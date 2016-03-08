@@ -1,14 +1,16 @@
 {
   "name": "react-begin",
   "version": "1.0.0",
-	"description": "a react begin project",
+  "description": "a react begin project",
   "scripts": {
-		"eslint": "eslint src/*",
+    "eslint": "esw -w src/*",
     "clean:dist": "rm -rf dist/js & rm -rf dist/styles & rm -rf dist/index.html & rm -rf dist/fonts",
     "build": "npm run clean:dist && NODE_ENV=prod webpack --progress --colors",
     "start": "NODE_ENV=dev webpack-dev-server --watch-poll --inline --hot"
   },
-	"keywords": ["react"],
+  "keywords": [
+    "react"
+  ],
   "author": "https://github.com/liu-dongyu",
   "license": "ISC",
   "devDependencies": {
@@ -21,12 +23,13 @@
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
     "eslint-plugin-react": "^4.1.0",
+    "eslint-watch": "^2.1.10",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
     "node-sass": "^3.4.2",
+    "postcss-cssnext": "^2.4.0",
     "postcss-loader": "^0.8.1",
-    "precss": "^1.4.0",
     "redux-devtools": "^3.1.1",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",

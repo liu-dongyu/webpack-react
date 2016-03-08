@@ -11,14 +11,12 @@ const WebpackConfig = require('webpack-config'),
 	template = WebpackConfig.environment.get('paths').template,
 	styles = WebpackConfig.environment.get('paths').styles,
 	nodemodulesPath = path.join(path.resolve(__dirname, '..'), 'node_modules'),
-	autoprefixer = require('autoprefixer'),
-	precss       = require('precss'),
 	ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = new WebpackConfig().merge({
 	entry: {
 		app: path.join(src, 'routes.js'),
-		//打包时分离第三方库
+		// 打包时分离第三方库
 		vendors: ['react', 'react-dom', 'react-router', 'react-router-redux', 'redux', 'react-redux']
 	},
 	output: {
@@ -27,10 +25,10 @@ module.exports = new WebpackConfig().merge({
 	},
 	resolve: {
 		extensions: ['', '.js', '.jsx', '.scss', '.css'],
-		//快捷路径，可以直接 import 该目录下的文件
+		// 快捷路径，可以直接 import 该目录下的文件
 		modulesDirectories: ['node_modules', 'styles', 'static'],
 		alias: {
-			//指定公共库的位置，优化webpack搜索硬盘的速度
+			// 指定公共库的位置，优化webpack搜索硬盘的速度
 			'react': path.join(nodemodulesPath, 'react'),
 			'react-dom': path.join(nodemodulesPath, 'react-dom'),
 			'react-router': path.join(nodemodulesPath, 'react-router'),
@@ -40,11 +38,11 @@ module.exports = new WebpackConfig().merge({
 		}
 	},
 	plugins: [
-		//以 template 为基础在 dist 下自动生成index.html
+		// 以 template 为基础在 dist 下自动生成index.html
 		new HtmlWebpackPlugin({template: path.join(template, 'index.html')}),
-		//第三方库存放的地方
+		// 第三方库存放的地方
 		new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.[hash].js'),
-		//css打包生成的目录
+		// css打包生成的目录
 		new ExtractTextPlugin('styles/styles.[hash].css')
 	],
 	module: {
@@ -57,9 +55,10 @@ module.exports = new WebpackConfig().merge({
 			{
 				test: /(\.css|\.scss)$/,
 				include: styles,
-				loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]-[hash:base64:5]!sass!postcss')
+				loader: ExtractTextPlugin.extract('style',
+					'css?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!sass!postcss')
 			},
-			{ //正常解析node_modules文件内的css库，不用CSS Modules
+			{ // 正常解析node_modules文件内的css库，不用CSS Modules
 				test: /\.css?$/,
 				include: nodemodulesPath,
 				loader: ExtractTextPlugin.extract('style', 'css')
@@ -71,6 +70,6 @@ module.exports = new WebpackConfig().merge({
 		]
 	},
 	postcss: function () {
-		return [autoprefixer, precss];
+		return [require('postcss-cssnext')];
 	}
 });
