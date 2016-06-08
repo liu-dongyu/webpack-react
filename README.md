@@ -3,16 +3,19 @@ react project demo
 
 ## 开始
 
-    //安装依赖
+    // 安装依赖
     npm install 
     
-    //开发环境，演示地址：http://localhost:3000
+    // 更新依赖
+    npm run update
+    
+    // 开发环境，演示地址：http://localhost:3000
     npm start 
     
-    //生产环境，dist目录
+    // 生产环境，dist目录
     npm run build 
     
-    //js代码规格检测
+    // js代码规格检测
     npm run eslint
 
 ## 框架 / 类库
