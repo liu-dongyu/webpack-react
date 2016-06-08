@@ -39,12 +39,6 @@ react project demo
 + [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)(react代码规则) 
 + [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin)(复制入口文件)
 
-## 目录结构
-
-### [参考1](http://marmelab.com/blog/2015/12/17/react-directory-structure.html) [参考2](https://github.com/erikras/react-redux-universal-hot-example)
-
-<img src="./static/dir-structure.png">
-
 
 ## 配置文件说明
 
