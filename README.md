@@ -42,11 +42,6 @@ react project demo
 
 ## 配置文件说明
 
-1. webpack.base.config.js，生产和开发环境共用配置
-2. webpack.dev.config.js，开发环境配置
-3. webpack.prod.config.js，生产环境配置
-
-
-## 注意
-
-1. 并没有整合livescript， 因为不知道怎么和 jsx / es6 共存
+1. webpack.base.config.babel.js，生产和开发环境共用配置
+2. webpack.dev.config.babel.js，开发环境配置
+3. webpack.prod.config.babel.js，生产环境配置
