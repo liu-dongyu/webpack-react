@@ -1,11 +1,7 @@
 react project demo
 ==================
 
-## 环境要求
-
- node >= 5.0
-
-## 开始
+### 开始
 
     // 安装依赖
     npm install 
@@ -22,7 +18,7 @@ react project demo
     // js代码规格检测
     npm run eslint
 
-## 框架 / 类库
+### 框架 / 类库
 
 + [react](https://github.com/facebook/react)
 + [redux](https://github.com/reactjs/redux)
@@ -32,7 +28,7 @@ react project demo
 + [immutable](https://facebook.github.io/immutable-js/)
 + [normalizr](https://github.com/gaearon/normalizr)
 
-## 工具
+### 工具
 
 + [webpack](https://github.com/webpack/webpack)
 + [webpack-config](https://github.com/mdreizin/webpack-config)（拆分及共享生产环境配置和开发环境配置）
@@ -47,7 +43,7 @@ react project demo
 + [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin)(复制入口文件)
 
 
-## 配置文件说明
+### 配置文件说明
 
 1. webpack.base.config.babel.js，生产和开发环境共用配置
 2. webpack.dev.config.babel.js，开发环境配置
