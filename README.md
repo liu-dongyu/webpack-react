@@ -1,4 +1,4 @@
-### webpack+react项目配置demo
+### webpack+react demo
 
 > [配置详解](https://github.com/liu-dongyu/frontend-notes/issues/16)
 
