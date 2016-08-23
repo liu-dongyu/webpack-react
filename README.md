@@ -1,5 +1,3 @@
-### webpack+react demo
-
 > [配置详解](https://github.com/liu-dongyu/frontend-notes/issues/16)
 
 #### 开始
