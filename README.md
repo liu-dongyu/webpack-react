@@ -8,7 +8,6 @@ nodejs: v4.4.7+
 ```    
 npm install
 ```
-or
 ```
 // 淘宝源
 npm install -g cnpm --registry=https://registry.npm.taobao.org
