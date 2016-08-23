@@ -1,0 +1,80 @@
+@import "../mixin/mixin";
+
+.container {
+  height: 100%;
+  width: 280px;
+  background: #2e3238;
+}
+
+// 头部个人信息栏
+.head {
+  height: 76px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  box-sizing: border-box;
+
+  .avatar {
+    height: 40px;
+    width: 40px;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 11px;
+  }
+  .nickname {
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+
+    @include ell();
+  }
+  .more {
+    background: url('../../static/icons.png') 0 -406px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+}
+
+// 搜索
+.search {
+  width: 100%;
+  padding: 0 18px;
+  margin-bottom: 6px;
+  position: relative;
+  height: 32px;
+  box-sizing: border-box;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: url('../../static/icons.png') 0 -1946px;
+    width: 30px;
+    height: 30px;
+  }
+  input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: #26292E;
+    font-size: 12px;
+    line-height: 32px;
+    padding-left: 30px;
+    color: #fff;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include placeholderCol(input, #fff);
+  }
+}

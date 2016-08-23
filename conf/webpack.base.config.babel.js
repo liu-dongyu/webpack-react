@@ -15,36 +15,38 @@ export default new Config().merge({
   },
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
-    filename: 'js/bundle.js'
+    filename: 'js/[name].js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules', 'static'],
+    modulesDirectories: [
+      path.resolve(__dirname, '..', 'node_modules'),
+      path.resolve(__dirname, '..', 'styles'),
+      path.resolve(__dirname, '..', 'static')
+    ],
   },
   plugins: [
-    // 以 template 为基础在 dist 下自动生成index.html
     new HtmlWebpackPlugin({
-      template:  path.resolve(__dirname, '..', 'template/index.html'),
       hash: true,
       title: 'a react project demo',
+      template:  path.resolve(__dirname, '..', 'template/index.html'),
     }),
-    // 第三方库存放的地方
     new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js'),
-    // css打包生成的目录
-    new ExtractTextPlugin('styles/styles.css')
+    new ExtractTextPlugin('styles/[name].css')
   ],
   module: {
     loaders: [
       {
-        test: /(\.js|\.jsx)$/,
-        loaders: ['babel?cacheDirectory'],
+        test: /(\.jsx)$/,
+        loaders: ['babel?cacheDirectory', 'eslint'],
         include: path.resolve(__dirname, '..', 'src')
       },
       {
-        test: /(\.css|\.scss)$/,
-        include: path.resolve(__dirname, '..', 'src'),
+        test: /(\.scss)$/,
+        include: path.resolve(__dirname, '..', 'styles'),
         loader: ExtractTextPlugin.extract('style',
-          'css?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!sass!postcss')
+          'css?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!resolve-url!sass!postcss')
       },
       {
         test: /\.css?$/,
@@ -54,8 +56,20 @@ export default new Config().merge({
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
         loader: 'url-loader?importLoaders=1&limit=1000&name=/fonts/[name].[ext]'
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=25000&name=image/[name]-[hash:base64:5].[ext]'
       }
     ]
   },
-  postcss: () => [require('postcss-cssnext')]
+  eslint: {
+    configFile: path.resolve(__dirname, '..', '.eslintrc')
+  },
+  postcss: () => [
+    require('postcss-will-change'),
+    require('postcss-cssnext'),
+    require('postcss-pseudoelements'),
+    require('postcss-font-normalize')
+  ]
 });

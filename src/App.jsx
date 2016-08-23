@@ -1,18 +1,9 @@
-import 'normalize.css/normalize.css';
-import 'font-awesome/css/font-awesome.css';
 import React from 'react';
-import Header from './header/Header';
-import Footer from './footer/Footer';
 
 function App({ children }) {
   return (
-    <div>
-      <Header />
-      <div>
-        {children}
-        <a href="https://github.com/liu-dongyu"><i className="fa fa-github" /></a>
-      </div>
-      <Footer />
+    <div style={{ height: '100%' }}>
+      {children}
     </div>
   );
 }
@@ -24,4 +15,3 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default App;
-

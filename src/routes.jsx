@@ -1,16 +1,17 @@
+import 'normalize.css/normalize.css';
+import 'font-awesome/css/font-awesome.css';
+import 'global.scss';
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './App';
-import Home from './home/Home';
-import About from './about/About';
+import Wechat from './wechat/Wechat';
 import Err404 from './err/Err404';
 
 render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="/about" component={About} />
+      <IndexRoute component={Wechat} />
       <Route path="/*" component={Err404} />
     </Route>
   </Router>,

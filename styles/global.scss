@@ -1,0 +1,37 @@
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, PingFangSC-Regular, Heiti SC Light, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+  text-rendering: optimizeSpeed;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  word-wrap: break-word;
+  line-height: 1;
+  font-weight: normal;
+  height: 100%;
+  overflow: auto;
+  min-width: 960px;
+  min-height: 500px;
+  background-image: url("wechat.jpg");
+  background-position: center;
+  background-size: cover;
+
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+  }
+}
+
+:global {
+  #app {
+    height: 100%;
+  }
+}
