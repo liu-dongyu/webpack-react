@@ -58,7 +58,7 @@ export default new Config().merge({
         loader: 'url-loader?importLoaders=1&limit=1000&name=/fonts/[name].[ext]'
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|ico|svg)$/,
         loader: 'url-loader?limit=25000&name=image/[name]-[hash:base64:5].[ext]'
       }
     ]

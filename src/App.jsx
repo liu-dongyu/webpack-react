@@ -1,8 +1,10 @@
 import React from 'react';
+import FaviconIco from './FaviconIco';
 
 function App({ children }) {
   return (
     <div style={{ height: '100%' }}>
+      <FaviconIco />
       {children}
     </div>
   );
