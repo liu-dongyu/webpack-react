@@ -8,4 +8,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.tips {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  font-size: 18px;
+  color: #666;
+  white-space: nowrap;
+  margin-bottom: 20px;
 }

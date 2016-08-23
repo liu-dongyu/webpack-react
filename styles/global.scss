@@ -17,10 +17,8 @@ body {
   font-weight: normal;
   height: 100%;
   overflow: auto;
-  min-width: 960px;
-  min-height: 500px;
-  background-image: url("wechat.jpg");
-  background-position: center;
+  min-width: 1000px;
+  background: url('../static/wechat.jpg') center;
   background-size: cover;
 
   * {

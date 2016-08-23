@@ -29,7 +29,7 @@ export default new Config().merge({
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      title: 'a react project demo',
+      title: 'wechat demo',
       template:  path.resolve(__dirname, '..', 'template/index.html'),
     }),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js'),
