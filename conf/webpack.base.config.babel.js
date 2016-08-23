@@ -6,12 +6,11 @@ import Config from 'webpack-config';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
-import CommonsChunkPlugin from 'webpack/lib/optimize/CommonsChunkPlugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default new Config().merge({
   entry: {
-    app: ['babel-polyfill', path.resolve(__dirname, '..', 'src/routes.js')],
+    app: ['babel-polyfill', path.resolve(__dirname, '..', 'src/routes.jsx')],
     vendors: ['react', 'react-dom', 'react-router']
   },
   output: {

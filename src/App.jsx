@@ -1,8 +1,8 @@
+import 'normalize.css/normalize.css';
+import 'font-awesome/css/font-awesome.css';
 import React from 'react';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import 'normalize.css/normalize.css';
-import 'font-awesome/css/font-awesome.css';
 
 function App({ children }) {
   return (
@@ -10,7 +10,7 @@ function App({ children }) {
       <Header />
       <div>
         {children}
-        <a href="https://github.com/liu-dongyu"><i className="fa fa-github"></i></a>
+        <a href="https://github.com/liu-dongyu"><i className="fa fa-github" /></a>
       </div>
       <Footer />
     </div>
