@@ -1,11 +1,7 @@
 import React from 'react';
 
-function Err404() {
+export default function Err404() {
   return (
-    <div>
-      <p>404</p>
-    </div>
+    <p>404</p>
   );
 }
-
-export default Err404;
