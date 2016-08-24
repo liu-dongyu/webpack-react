@@ -3,7 +3,6 @@
 'use strict';
 
 import Config from 'webpack-config';
-import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
