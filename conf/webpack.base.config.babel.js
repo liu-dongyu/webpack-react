@@ -10,11 +10,10 @@ import path from 'path';
 export default new Config().merge({
   entry: {
     app: ['babel-polyfill', path.resolve(__dirname, '../src/routes.jsx')],
-    vendors: ['react', 'react-dom', 'react-router', 'react-helmet'],
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'js/[name].js',
+    filename: '[name].js',
     publicPath: '/',
   },
   resolve: {
@@ -31,7 +30,6 @@ export default new Config().merge({
       title: 'wechat demo',
       template: path.resolve(__dirname, '../template/index.html'),
     }),
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js'),
   ],
   module: {
     loaders: [
@@ -42,11 +40,11 @@ export default new Config().merge({
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
-        loader: 'url-loader?importLoaders=1&limit=1000&name=/fonts/[name].[ext]'
+        loader: 'url-loader?importLoaders=1&limit=1000&name=[name].[ext]'
       },
       {
         test: /\.(png|jpg|ico|svg)$/,
-        loader: 'url-loader?limit=25000&name=image/[name]-[hash:base64:5].[ext]'
+        loader: 'url-loader?limit=25000&name=[name]-[hash:base64:5].[ext]'
       }
     ]
   },

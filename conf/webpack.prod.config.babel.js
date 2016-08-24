@@ -9,6 +9,9 @@ import WebpackStrip from 'webpack-strip';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default new Config().extend('./conf/webpack.base.config.babel.js').merge({
+  entry: {
+    vendors: ['react', 'react-dom', 'react-router', 'react-helmet'],
+  },
   module: {
     loaders: [
       {
@@ -46,6 +49,7 @@ export default new Config().extend('./conf/webpack.base.config.babel.js').merge(
         'NODE_ENV': '"production"'
       }
     }),
-    new ExtractTextPlugin('styles/[name].css'),
+    new ExtractTextPlugin('[name].css'),
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
   ]
 });

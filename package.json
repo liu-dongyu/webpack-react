@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "update": "ncu -a",
-    "clean:dist": "rm -rf dist/js & rm -rf dist/styles & rm -rf dist/index.html & rm -rf dist/fonts",
+    "clean:dist": "rm -rf dist/*",
     "build": "npm run clean:dist && NODE_ENV=prod webpack --config webpack.config.babel.js --progress --colors",
     "start": "NODE_ENV=dev webpack-dev-server --config webpack.config.babel.js"
   },
