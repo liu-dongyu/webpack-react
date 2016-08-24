@@ -12,9 +12,13 @@
 @mixin responsive($min: 0, $max: 0) {
   @if $max != 0 and $min != 0 {
     @media screen and (max-width: $max) and (min-width: $min) { @content; }
-  } @else if $min == 0 {
+  }
+
+  @else if $min == 0 {
     @media screen and (max-width: $max) { @content; }
-  } @else if $max == 0 {
+  }
+
+  @else if $max == 0 {
     @media screen and (min-width: $min) { @content; }
   }
 }
@@ -24,15 +28,17 @@
   @if $width != 0 and $height != 0 {
     background-size: $width $height;
   }
+
   background: {
     image: url('image/' + $file + '.' + $type);
     repeat: no-repeat;
   }
+
   @media (-webkit-min-device-pixel-ratio: 1.5),
-  (min--moz-device-pixel-ratio: 1.5),
-  (-o-min-device-pixel-ratio: 3/2),
-  (min-device-pixel-ratio: 1.5),
-  (min-resolution: 1.5dppx) {
+    (min--moz-device-pixel-ratio: 1.5),
+    (-o-min-device-pixel-ratio: 3/2),
+    (min-device-pixel-ratio: 1.5),
+    (min-resolution: 1.5dppx) {
     & {
       background-image: url('image/' + $file + '@2x.' + $type);
     }
@@ -41,7 +47,7 @@
 
 // 清除浮动
 @mixin clear-fix() {
-  &:after {
+  &::after {
     clear: both;
     content: '.';
     display: block;
@@ -49,6 +55,7 @@
     line-height: 0;
     overflow: hidden;
   }
+
   *height: 1%;
 }
 
@@ -60,7 +67,7 @@
 }
 
 @mixin spinner() {
-  &:before {
+  &::before {
     content: '';
     width: 30px;
     height: 30px;
@@ -83,39 +90,51 @@
     0% {
       transform: rotate(0deg);
     }
+
     8.33333333% {
       transform: rotate(30deg);
     }
+
     16.66666667% {
       transform: rotate(60deg);
     }
+
     25% {
       transform: rotate(90deg);
     }
+
     33.33333333% {
       transform: rotate(120deg);
     }
+
     41.66666667% {
       transform: rotate(150deg);
     }
+
     50% {
       transform: rotate(180deg);
     }
+
     58.33333333% {
       transform: rotate(210deg);
     }
+
     66.66666667% {
       transform: rotate(240deg);
     }
+
     75% {
       transform: rotate(270deg);
     }
+
     83.33333333% {
       transform: rotate(300deg);
     }
+
     91.66666667% {
       transform: rotate(330deg);
     }
+
     100% {
       transform: rotate(360deg);
     }

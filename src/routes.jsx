@@ -1,6 +1,3 @@
-import 'normalize.css/normalize.css';
-import 'font-awesome/css/font-awesome.css';
-import 'global.scss';
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';

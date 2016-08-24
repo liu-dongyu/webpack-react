@@ -6,6 +6,7 @@ import Config from 'webpack-config';
 import path from 'path';
 import webpack from 'webpack';
 import WebpackStrip from 'webpack-strip';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default new Config().extend('./conf/webpack.base.config.babel.js').merge({
   module: {
@@ -14,6 +15,17 @@ export default new Config().extend('./conf/webpack.base.config.babel.js').merge(
         test: /(\.jsx)$/,
         loader: WebpackStrip.loader('console.log', 'console.error', 'alert'),
         include: path.resolve(__dirname, '..', 'src')
+      },
+      {
+        test: /(\.scss)$/,
+        include: path.resolve(__dirname, '../styles'),
+        loader: ExtractTextPlugin.extract('style',
+          'css?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!resolve-url!sass!postcss')
+      },
+      {
+        test: /\.css?$/,
+        include: path.resolve(__dirname, '../node_modules'),
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
     ]
   },
@@ -33,6 +45,7 @@ export default new Config().extend('./conf/webpack.base.config.babel.js').merge(
       'process.env': {
         'NODE_ENV': '"production"'
       }
-    })
+    }),
+    new ExtractTextPlugin('styles/[name].css'),
   ]
 });

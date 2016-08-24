@@ -7,7 +7,7 @@
     "update": "ncu -a",
     "clean:dist": "rm -rf dist/js & rm -rf dist/styles & rm -rf dist/index.html & rm -rf dist/fonts",
     "build": "npm run clean:dist && NODE_ENV=prod webpack --config webpack.config.babel.js --progress --colors",
-    "start": "NODE_ENV=dev webpack-dev-server --config webpack.config.babel.js --watch-poll --inline --hot"
+    "start": "NODE_ENV=dev webpack-dev-server --config webpack.config.babel.js"
   },
   "keywords": [
     "react"
@@ -49,6 +49,9 @@
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.1.0",
+    "stylelint-config-standard": "^12.0.0",
+    "stylelint-webpack-plugin": "^0.3.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-config": "^6.1.2",
