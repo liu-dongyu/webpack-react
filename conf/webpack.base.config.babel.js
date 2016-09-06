@@ -9,7 +9,6 @@ import path from 'path';
 export default new Config().merge({
   entry: {
     app: ['babel-polyfill', path.resolve(__dirname, '../src/routes.jsx')],
-    calcPolyfill: path.resolve(__dirname, '../node_modules/calc-polyfill/calc.min.js'),
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -49,6 +48,7 @@ export default new Config().merge({
     ]
   },
   postcss: () => [
+    require('postcss-flexbugs-fixes'),
     require('postcss-cssnext'),
     require('doiuse')({
       browsers: ['ie >= 10', 'last 2 versions'],
