@@ -9,6 +9,7 @@ import path from 'path';
 export default new Config().merge({
   entry: {
     app: ['babel-polyfill', path.resolve(__dirname, '../src/routes.jsx')],
+    calcPolyfill: path.resolve(__dirname, '../node_modules/calc-polyfill/calc.min.js'),
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -39,18 +40,26 @@ export default new Config().merge({
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
-        loader: 'url-loader?importLoaders=1&limit=1000&name=[name].[ext]'
+        loader: 'url-loader?importLoaders=1&limit=1&name=[name].[ext]'
       },
       {
-        test: /\.(png|jpg|ico|svg)$/,
+        test: /\.(png|jpg|ico)$/,
         loader: 'url-loader?limit=25000&name=[name]-[hash:base64:5].[ext]'
       }
     ]
   },
   postcss: () => [
-    require('postcss-will-change'),
     require('postcss-cssnext'),
-    require('postcss-pseudoelements'),
+    require('doiuse')({
+      browsers: ['ie >= 10', 'last 2 versions'],
+      ignore: [
+        'css-appearance',
+        'flexbox'
+      ]
+    }),
     require('postcss-font-normalize'),
+    require('postcss-reporter')({
+      clearMessages: true,
+    }),
   ],
 });

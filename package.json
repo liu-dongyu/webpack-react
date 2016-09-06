@@ -28,6 +28,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.11.6",
     "css-loader": "^0.23.1",
+    "doiuse": "^2.4.1",
     "eslint": "^3.3.1",
     "eslint-config-airbnb": "^10.0.1",
     "eslint-import-resolver-webpack": "^0.5.1",
@@ -43,8 +44,7 @@
     "postcss-cssnext": "^2.7.0",
     "postcss-font-normalize": "0.0.0",
     "postcss-loader": "^0.10.1",
-    "postcss-pseudoelements": "^3.0.0",
-    "postcss-will-change": "^1.1.0",
+    "postcss-reporter": "^1.4.1",
     "redux-devtools": "^3.3.1",
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "^4.0.0",
@@ -59,6 +59,7 @@
     "webpack-strip": "^0.1.0"
   },
   "dependencies": {
+    "calc-polyfill": "^0.1.0",
     "font-awesome": "^4.6.3",
     "immutable": "^3.8.1",
     "normalize.css": "^4.2.0",
