@@ -48,6 +48,7 @@ export default new Config().merge({
     ]
   },
   postcss: () => [
+    require('postcss-flexibility'),
     require('postcss-flexbugs-fixes'),
     require('postcss-cssnext'),
     require('doiuse')({

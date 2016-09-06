@@ -43,6 +43,7 @@
     "npm-check-updates": "^2.8.0",
     "postcss-cssnext": "^2.7.0",
     "postcss-flexbugs-fixes": "^2.0.0",
+    "postcss-flexibility": "^1.1.0",
     "postcss-font-normalize": "0.0.0",
     "postcss-loader": "^0.10.1",
     "postcss-reporter": "^1.4.1",
