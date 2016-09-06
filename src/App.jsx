@@ -1,6 +1,7 @@
 import 'normalize.css/normalize.css';
 import 'font-awesome/css/font-awesome.css';
 import 'global.scss';
+import 'flexibility/flexibility.js';
 import React from 'react';
 import FaviconIco from './FaviconIco';
 

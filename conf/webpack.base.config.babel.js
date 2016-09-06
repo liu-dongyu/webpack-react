@@ -31,6 +31,7 @@ export default new Config().merge({
     }),
   ],
   module: {
+    noParse: path.resolve(__dirname, '../node_modules/flexibility/flexibility.js'),
     loaders: [
       {
         test: /(\.jsx)$/,

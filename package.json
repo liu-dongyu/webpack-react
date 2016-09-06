@@ -61,6 +61,7 @@
     "webpack-strip": "^0.1.0"
   },
   "dependencies": {
+    "flexibility": "^2.0.1",
     "font-awesome": "^4.6.3",
     "immutable": "^3.8.1",
     "normalize.css": "^4.2.0",

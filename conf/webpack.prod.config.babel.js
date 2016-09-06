@@ -10,7 +10,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default new Config().extend('./conf/webpack.base.config.babel.js').merge({
   entry: {
-    vendors: ['react', 'react-dom', 'react-router', 'react-helmet'],
+    vendors: ['react', 'react-dom', 'react-router', 'react-helmet', 'flexibility'],
   },
   module: {
     loaders: [
