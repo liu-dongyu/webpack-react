@@ -1,7 +1,7 @@
 {
-  "name": "react-begin",
+  "name": "webpack-react",
   "version": "1.0.0",
-  "description": "a react project demo",
+  "description": "A Webpack sample project, configured for ES6 React and SCSS",
   "private": true,
   "scripts": {
     "update": "ncu -a",
