@@ -33,21 +33,8 @@ export default new Config().extend('./conf/webpack.base.config.babel.js').merge(
     ]
   },
   plugins: [
-    // bug with inline svg
-    // https://github.com/webpack/webpack/issues/2571
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      minimize: true,
-      compress: {
-        drop_debugger: true,
-        warnings: false,
-        drop_console: true
-      }
-    }),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': '"production"'
-      }
+      'process.env': { 'NODE_ENV': JSON.stringify('production') },
     }),
     new ExtractTextPlugin('[name].css'),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),

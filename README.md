@@ -25,22 +25,28 @@ npm run update
 
 // 打包
 npm run build 
+
+// css代码格式实时兼容修改
+npm run gulp
 ```
 
 ## 已配置的内容
 ### 共用
-1. babel解析jsx中es6语法
+1. 解析es6/scss
 2. 图片bast64,带hash
 3. 自动打包字体图标，图片
 4. 自动打包html,js/css引用带hash
 5. 自动补全css浏览器前缀等
 6. 添加css浏览器兼容性检查
+7. 自动修复存在的css语法错误
 
 ### 开发环境
-1. 代码热加载
-2. eslint,stylelint代码规范检查
-3. sourceMap
-
+1. `javascript` `css` 热更新
+2. `eslint` `javascript` 代码规范检查
+3. `stylelint` `css` 代码规范检查
+3. `sourceMap`
+4. 自动按 `.stylelintrc` 修正代码规范
+ 
 ### 生产环境
 1. 去除jsx中的 `console.log & console.error & alert`
 2. css拆分出js单独打包

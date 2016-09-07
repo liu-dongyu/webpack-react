@@ -26,7 +26,7 @@ export default new Config().merge({
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      title: 'wechat demo',
+      title: 'demo',
       template: path.resolve(__dirname, '../template/index.html'),
     }),
   ],
@@ -48,20 +48,24 @@ export default new Config().merge({
       }
     ]
   },
-  postcss: () => [
-    require('postcss-flexibility'),
-    require('postcss-flexbugs-fixes'),
-    require('postcss-cssnext'),
-    require('doiuse')({
-      browsers: ['ie >= 10', 'last 2 versions'],
-      ignore: [
-        'css-appearance',
-        'flexbox'
-      ]
-    }),
-    require('postcss-font-normalize'),
-    require('postcss-reporter')({
-      clearMessages: true,
-    }),
-  ],
+  postcss: () => {
+    return {
+      plugins: [
+        require('postcss-flexibility'),
+        require('postcss-flexbugs-fixes'),
+        require('postcss-cssnext')({ browsers: ['ie >= 10', 'last 2 versions'] }),
+        require('doiuse')({
+          browsers: ['ie >= 10', 'last 2 versions'],
+          ignore: [
+            'css-appearance',
+            'flexbox'
+          ]
+        }),
+        require('postcss-font-normalize'),
+        require('postcss-reporter')({ clearMessages: true }),
+      ],
+      // 修复可能存在的语法错误
+      parser: require('postcss-safe-parser'),
+    }
+  },
 });
