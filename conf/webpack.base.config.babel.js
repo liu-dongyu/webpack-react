@@ -44,7 +44,7 @@ export default new Config().merge({
       },
       {
         test: /\.(png|jpg|ico)$/,
-        loader: 'url-loader?limit=25000&name=[name]-[hash:base64:5].[ext]'
+        loader: 'url-loader?limit=1&name=[name]-[hash:base64:5].[ext]'
       }
     ]
   },
