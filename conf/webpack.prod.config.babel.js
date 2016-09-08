@@ -23,7 +23,7 @@ export default new Config().extend('./conf/webpack.base.config.babel.js').merge(
         test: /(\.scss)$/,
         include: path.resolve(__dirname, '../styles'),
         loader: ExtractTextPlugin.extract('style',
-          'css?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!resolve-url!sass!postcss')
+          'css?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!sass!postcss')
       },
       {
         test: /\.css?$/,

@@ -44,7 +44,7 @@ export default new Config().extend('./conf/webpack.base.config.babel.js').merge(
       {
         test: /(\.scss)$/,
         include: path.resolve(__dirname, '../styles'),
-        loader: 'style!css?sourceMap&modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!resolve-url!sass?sourceMap!postcss'
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]!sass!postcss'
       },
       {
         test: /\.css?$/,

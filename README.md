@@ -26,7 +26,7 @@ npm run update
 // 打包
 npm run build 
 
-// css代码格式实时兼容修改
+// css代码格式实时监听修改
 npm run gulp
 ```
 

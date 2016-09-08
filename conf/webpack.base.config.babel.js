@@ -36,15 +36,12 @@ export default new Config().merge({
       {
         test: /(\.jsx)$/,
         loaders: ['babel?cacheDirectory'],
-        include: path.resolve(__dirname, '../src')
+        include: path.resolve(__dirname, '../src'),
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
-        loader: 'url-loader?importLoaders=1&limit=1&name=[name].[ext]'
-      },
-      {
-        test: /\.(png|jpg|ico)$/,
-        loader: 'url-loader?limit=1&name=[name]-[hash:base64:5].[ext]'
+        test: /\.(png|jpe?g|ico|svg)(\?.*$|$)/,
+        loader: 'file?name=[hash].[ext]',
+        include: path.resolve(__dirname, '../static'),
       }
     ]
   },
@@ -53,6 +50,10 @@ export default new Config().merge({
       plugins: [
         require('postcss-flexibility'),
         require('postcss-flexbugs-fixes'),
+        require('postcss-assets')({
+          relative: true,
+          loadPaths: [path.resolve(__dirname, '../static')],
+        }),
         require('postcss-cssnext')({ browsers: ['ie >= 10', 'last 2 versions'] }),
         require('doiuse')({
           browsers: ['ie >= 10', 'last 2 versions'],

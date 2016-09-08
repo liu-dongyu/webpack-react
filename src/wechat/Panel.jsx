@@ -9,7 +9,7 @@ function Panel() {
       <div className={styles.head}>
         <img src={avatarImg} className={styles.avatar} alt="头像" />
         <span className={styles.nickname}>刘东宇</span>
-        <a className={styles.more} />
+        <span className={styles.more} />
       </div>
       {/* 搜索框 */}
       <div className={styles.search}>
