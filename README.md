@@ -32,25 +32,23 @@ npm run gulp
 
 ## 已配置的内容
 ### 共用
-1. 解析es6/scss
-2. 图片bast64,带hash
-3. 自动打包字体图标，图片
-4. 自动打包html,js/css引用带hash
-5. 自动补全css浏览器前缀等
-6. 添加css浏览器兼容性检查
-7. 自动修复存在的css语法错误
+1. 解析 `es6` `scss`
+2. 图片 `hash` 命名
+3. 自动打包 `javascript` `css` 中的图片
+4. 自动打包 `html`，引用带 `hash`
+5. 自动补全 `css` 浏览器前缀
+6. 添加 `css` 浏览器兼容性检查
+7. 自动修复存在的 `css` 语法错误
 
 ### 开发环境
 1. `javascript` `css` 热更新
-2. `eslint` `javascript` 代码规范检查
-3. `stylelint` `css` 代码规范检查
-3. `sourceMap`
-4. 自动按 `.stylelintrc` 修正代码规范
+2. `eslint` `stylelint` 代码格式检查
+3. 自动按 `.stylelintrc` 修正 `css` 代码格式
  
 ### 生产环境
 1. 去除jsx中的 `console.log & console.error & alert`
-2. css拆分出js单独打包
-3. 提取第三方js依赖单独打包 
+2. `css` 打包成文件
+3. 提取第三方 `javascript` 依赖单独打包 
 4. 代码压缩
 
 > [webpack配置解释参考](https://github.com/liu-dongyu/frontend-notes/issues/16)
