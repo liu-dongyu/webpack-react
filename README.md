@@ -26,8 +26,8 @@ npm run update
 // 打包
 npm run build 
 
-// css代码格式实时监听修改
-npm run gulp
+// 修正css代码格式
+npm run stylefmt
 ```
 
 ## 已配置的内容

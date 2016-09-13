@@ -32,8 +32,4 @@ gulp.task('stylefmt', function () {
     .pipe(gulp.dest('./styles'));
 });
 
-gulp.task('watch', function () {
-  gulp.watch('styles/**/*.scss', ['stylefmt']);
-});
-
 gulp.task('minify', ['script', 'css', 'html']);

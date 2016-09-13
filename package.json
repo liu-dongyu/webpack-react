@@ -4,7 +4,7 @@
   "description": "A Webpack sample project, configured for ES6 React and SCSS",
   "private": true,
   "scripts": {
-    "gulp": "gulp watch",
+    "stylefmt": "gulp stylefmt",
     "update": "ncu -a",
     "clean:dist": "rm -rf dist/*",
     "build": "npm run clean:dist && NODE_ENV=prod webpack --config webpack.config.babel.js --progress --colors && gulp minify",
@@ -32,13 +32,13 @@
     "babel-register": "^6.14.0",
     "css-loader": "^0.25.0",
     "doiuse": "^2.4.1",
-    "eslint": "^3.4.0",
-    "eslint-config-airbnb": "^11.0.0",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
     "eslint-import-resolver-webpack": "^0.5.1",
     "eslint-loader": "^1.5.0",
     "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^2.2.1",
-    "eslint-plugin-react": "^6.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.2.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
@@ -77,6 +77,6 @@
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-helmet": "^3.1.0",
-    "react-router": "^2.7.0"
+    "react-router": "^2.8.0"
   }
 }
