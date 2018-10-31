@@ -44,7 +44,7 @@ npm run ncu;
 
 ### 问题
 
-- url-loader 或 file-loader 配合 happypack，打包出来的图片是损坏的。[Issue](https://github.com/amireh/happypack/issues/233)
+- url-loader 或 file-loader 配合 happypack，打包出来的图片是损坏的。[Issue](https://github.com/amireh/happypack/issues/233)
 
 ---
 
