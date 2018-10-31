@@ -7,7 +7,8 @@ html {
 }
 
 body {
-  font-family: Helvetica, Arial, PingFangSC-Regular, Heiti SC Light, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+  font-family: Helvetica, Arial, PingFangSC-Regular, Heiti SC Light,
+    Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
   text-rendering: optimizeSpeed;
   margin: 0;
   padding: 0;
@@ -18,7 +19,7 @@ body {
   height: 100%;
   overflow: auto;
   min-width: 1000px;
-  background: resolve('wechat.jpg') center;
+  background-image: url(../../../static/img/wechat.jpg);
   background-size: cover;
 
   * {

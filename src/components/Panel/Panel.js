@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from 'wechart/panel.scss';
-import avatarImg from 'avatar.jpg';
+import styles from './panel.scss';
+import avatarImg from './img/avatar.jpg';
 
 function Panel() {
   return (

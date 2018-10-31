@@ -1,4 +1,6 @@
 node_modules
 npm-debug.log
-/dist
-/.idea
+dist
+.idea
+.DS_Store
+.vscode

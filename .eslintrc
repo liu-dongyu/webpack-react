@@ -1,9 +1,10 @@
 {
-  "extends": "airbnb",
-  "settings": {
-    "import/resolver": "webpack"
-  },
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
   "env": {
     "browser": true
+  },
+  "settings": {
+    "react": { "version": "16.6.0" }
   }
 }
