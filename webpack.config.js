@@ -176,8 +176,8 @@ module.exports = (env, argv) => {
           {
             loader: 'css-loader',
             options: {
-              // 指定在css-loader起作用前有多少个loader
-              // 存在postcss-loader和sass-loader，所以2
+              // 指定在css-loader解析css文件前有多少个loader
+              // 存在postcss-loader，所以1
               importLoaders: 2,
               // 开启CSS Modules，每个class都会按照localIdentName命名，解决命名冲突问题
               modules: true,
